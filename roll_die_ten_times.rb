@@ -1,8 +1,10 @@
 dice = [1, 2, 3, 4, 5, 6]
 
 def roll(y)
-  x = Random.rand(7)
+  x = Random.rand(6)
   puts "The result of your roll is #{y[x]}."
 end
 
-roll(dice)
+10.times do
+  roll(dice)
+end
