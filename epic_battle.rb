@@ -20,7 +20,7 @@ def play()
   puts "Defender: #{y} armies"
 
 
-  puts "\nBEGIN THE EPIC BATTLE"
+  puts "\nPress ENTER to COMMENCE THE EPIC BATTLE!!!"
   arbitrary_input = gets
 
   dice = [1, 2, 3, 4, 5, 6]
