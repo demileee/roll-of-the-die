@@ -106,20 +106,18 @@ def play()
       end
     end
 
-    if x <= 1
+    if x <= 1 || y <= 1
       puts "\nFinal Outcome"
       puts "=============\n"
       puts "Attacker's final army count: #{x}"
       puts "Defender's final army count: #{y}"
-      puts "Defender retains their country!"
-      break
-    elsif y <= 1
-      puts "\nFinal Outcome"
-      puts "=============\n"
-      puts "Attacker's final army count: #{x}"
-      puts "Defender's final army count: #{y}"
-      puts "Attacker retains their country!"
-      break
+      if x<=1
+        puts "Defender retains their country!"
+        break
+      elsif y <= 1
+        puts "Attacker retains their country!"
+        break
+      end
     end
 
     puts "\nPress ENTER for the next round!"
