@@ -68,39 +68,40 @@ def play()
       puts "Defender cannot make anymore rolls."
     end
 
-    att_rolls.slice!(2)
-    att_rolls.slice!(3)
+    att = att_rolls.sort.reverse
+    att.slice!(2)
+    att.slice!(3)
     def_rolls.slice!(2)
     def_rolls.slice!(3)
 
-    if att_rolls.length > 1 && def_rolls.length > 1
-      if att_rolls[0] > def_rolls[0]
-        puts "\nAttacker wins a battle: #{att_rolls[0]} beats #{def_rolls[0]}."
+    if att.length > 1 && def_rolls.length > 1
+      if att[0] > def_rolls[0]
+        puts "\nAttacker wins a battle: #{att[0]} beats #{def_rolls[0]}."
         y = y - 1
-        if att_rolls[1] > def_rolls[1]
-          puts "Attacker wins a battle: #{att_rolls[1]} beats #{def_rolls[1]}."
+        if att[1] > def_rolls[1]
+          puts "Attacker wins a battle: #{att[1]} beats #{def_rolls[1]}."
           y = y - 1
-        elsif att_rolls[1] <= def_rolls[1]
-          puts "Defender wins a battle: #{def_rolls[1]} beats #{att_rolls[1]}."
+        elsif att[1] <= def_rolls[1]
+          puts "Defender wins a battle: #{def_rolls[1]} beats #{att[1]}."
           x = x - 1
         end
-      elsif att_rolls[0] <= def_rolls[0]
-        puts "\nDefender wins a battle: #{def_rolls[0]} beats #{att_rolls[0]}."
+      elsif att[0] <= def_rolls[0]
+        puts "\nDefender wins a battle: #{def_rolls[0]} beats #{att[0]}."
         x = x - 1
-        if att_rolls[1] > def_rolls[1]
-          puts "Attacker wins a battle: #{att_rolls[1]} beats #{def_rolls[1]}."
+        if att[1] > def_rolls[1]
+          puts "Attacker wins a battle: #{att[1]} beats #{def_rolls[1]}."
           y = y - 1
-        elsif att_rolls[1] <= def_rolls[1]
-          puts "Defender wins a battle: #{def_rolls[1]} beats #{att_rolls[1]}."
+        elsif att[1] <= def_rolls[1]
+          puts "Defender wins a battle: #{def_rolls[1]} beats #{att[1]}."
           x = x - 1
         end
       end
-    elsif att_rolls.length == 1 || def_rolls.length == 1
-      if att_rolls[0] > def_rolls[0]
-        puts "\nAttacker wins a battle: #{att_rolls[0]} beats #{def_rolls[0]}."
+    elsif att.length == 1 || def_rolls.length == 1
+      if att[0] > def_rolls[0]
+        puts "\nAttacker wins a battle: #{att[0]} beats #{def_rolls[0]}."
         y = y - 1
       elsif att_rolls[0] <= def_rolls[0]
-        puts "Defender wins a battle: #{def_rolls[0]} beats #{att_rolls[0]}."
+        puts "Defender wins a battle: #{def_rolls[0]} beats #{att[0]}."
         x = x - 1
       end
     end
